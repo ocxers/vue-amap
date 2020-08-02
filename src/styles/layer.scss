@@ -1,0 +1,235 @@
+.layer-container {
+    &.collapse {
+        .layer.layer-add {
+            left: -350px;
+        }
+        .layer.layer-select {
+            right: -350px;
+        }
+        .layer.layer-add-collapse {
+            left: 15px
+        }
+        .layer.layer-select-collapse {
+            right: 15px
+        }
+    }
+
+    .layer {
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        width: 300px;
+        background-color: #fff;
+        box-shadow: 0 0 5px rgba(#000, .35);
+        border-radius: 5px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        max-height: 60%;
+        transition: all .3s;
+
+        .nothing {
+            text-align: center;
+            display: block;
+            padding: 30px 0;
+            opacity: .6;
+        }
+
+        header {
+            padding: 10px 15px;
+            background-color: #efefef;
+            display: flex;
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+            border-bottom: 1px solid #ddd;
+            flex: 0 0;
+
+            h3 {
+                flex: 1 1;
+                margin: 0;
+                font-weight: 400;
+            }
+
+            span {
+                flex: 0 0;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+
+                &.shape {
+                    display: inline-block;
+                    min-width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                    background-color: #ddd;
+
+                    &.rectangle {
+                        min-width: 40px;
+                        border-radius: 0;
+                    }
+                }
+
+                &.active {
+                    background-color: #4285f4;
+                }
+
+                &:not(:last-child) {
+                    margin-right: 10px;
+                }
+
+                i {
+                    display: inline-block;
+                    position: relative;
+                    font-size: 18px;
+
+                    .choose-file {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        display: inline-block;
+                        overflow: hidden;
+                        width: 100%;
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+
+        footer {
+            padding: 10px 15px;
+            background-color: #efefef;
+            font-weight: 400;
+            margin: 0;
+            display: flex;
+            flex: 0 0;
+            border-top: 1px solid #ddd;
+            align-items: center;
+
+            span {
+                flex: 0 0;
+                white-space: nowrap;
+                margin-left: auto;
+            }
+        }
+
+        .layer-content {
+            padding: 0;
+            overflow-y: auto;
+            flex: 1 1;
+
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    list-style-type: none;
+                    cursor: pointer;
+                    padding: 5px 5px 5px 15px;
+                    line-height: 24px;
+                    display: flex;
+                    align-items: center;
+                    border-bottom: 1px solid transparent;
+
+                    span {
+                        flex: 1 1;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+
+                    i, div.delete {
+                        flex: 0 0;
+                        padding: 0 5px;
+
+                        &.icon-hide {
+                            position: relative;
+                            &:after {
+                                content: '';
+                                position: absolute;
+                                width: 20px;
+                                height: 1px;
+                                transform: rotate(-45deg);
+                                top: 11px;
+                                left: 1px;
+                                background: #040000;
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        background-color: #efefef;
+                    }
+
+                    &:not(:last-child) {
+                        border-bottom-color: #efefef;
+                    }
+                }
+            }
+        }
+
+        .collapse-icon {
+            display: none;
+        }
+
+        &.layer-add-collapse, &.layer-select-collapse {
+            left: -100px;
+            transition: all .3s;
+            width: 36px;
+            height: 36px;
+            padding: 5px;
+            border-radius: 50%;
+            text-align: center;
+
+            .collapse-icon {
+                display: block;
+                font-size: 26px;
+                cursor: pointer;
+            }
+        }
+        &.layer-select-collapse {
+            left: initial;
+            right: -100px;
+        }
+
+        &.layer-add {
+            ul {
+                li {
+                    cursor: move;
+
+                    i {
+                        cursor: pointer;
+                        display: inline-block;
+                        width: 24px;
+                        height: 24px;
+                        line-height: 24px;
+                        border-radius: 3px;
+                        text-align: center;
+                        padding: 0;
+                        flex: initial;
+
+                        &:hover {
+                            background-color: #ccc;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.layer-select {
+            right: 15px;
+            left: auto;
+
+            ul {
+                li {
+                    padding-left: 11px;
+                    border-left: 4px solid transparent;
+                    &.selected {
+                        border-left-color: #4285f4;
+                        background-color: rgba(#4285f4, .1);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "vue_amap",
+  "description": "Vue 高德地图",
+  "author": "ocxers@gmail.com",
+  "private": true,
+  "scripts": {
+    "dev": "webpack-dev-server -d --inline --hot --env.dev",
+    "build": "rimraf dist && webpack -p --progress --hide-modules"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "echarts": "^4.0.4",
+    "element-ui": "^2.13.2",
+    "json-formatter-js": "^2.2.0",
+    "moment": "^2.22.0",
+    "vue": "^2.5.16",
+    "vue-amap": "^0.5.10",
+    "vuex": "^3.0.1",
+    "vuex-router-sync": "^5.0.0"
+  },
+  "engines": {
+    "node": "8.10"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.6.0",
+    "babel-core": "^6.21.0",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-env": "^1.6.1",
+    "css-loader": "^0.26.1",
+    "eslint": "^3.12.2",
+    "eslint-config-enough": "^0.2.2",
+    "eslint-loader": "^1.6.1",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.5",
+    "html-webpack-plugin": "^2.24.1",
+    "node-sass": "^4.5.3",
+    "postcss-loader": "^1.2.1",
+    "rimraf": "^2.5.4",
+    "sass-loader": "^6.0.5",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "vue-loader": "^10.0.0",
+    "vue-router": "^2.2.1",
+    "vue-template-compiler": "^2.1.8",
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.5.1"
+  }
+}
