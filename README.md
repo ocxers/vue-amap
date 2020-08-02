@@ -19,6 +19,7 @@ Install dependencies:
 npm run dev
 ```
 
+![image](https://github.com/ocxers/vue-amap/blob/master/src/assets/img/screenshot.png?raw=true)
 
 ## 功能说明
 ### 图层管理
